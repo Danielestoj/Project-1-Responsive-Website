@@ -9,3 +9,14 @@ function loadComponent(id, file) { // Cargar un componente HTML en un elemento c
 // Cargar componentes
 loadComponent("nav", "components/nav.html"); // Cargar navegación en el elemento con ID "nav"
 loadComponent("footer", "components/footer.html"); // Cargar pie de página en el elemento con ID "footer"
+
+// Flecha para volver al inicio
+const backToTop = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight - 800) {
+        backToTop.classList.add('show');
+    } else {
+        backToTop.classList.remove('show');
+    }
+});

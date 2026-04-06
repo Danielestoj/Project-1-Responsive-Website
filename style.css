@@ -232,6 +232,45 @@ h4 {
   opacity: 1;
 }
 
+/* Flecha animada */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    
+    display: flex; /* siempre presente */
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+/* visible + animación */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    animation: floatUpDown 1.5s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.back-to-top img {
+    width: 50px;
+}
+
+
 /* Sección general */
 .projects-section {
     padding: 60px 80px;
