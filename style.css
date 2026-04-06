@@ -35,29 +35,6 @@ h4 {
   margin-bottom: 10px;
 }
 
-/* Body Intro */
-.body-intro-lg {
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.body-intro-md {
-  font-size: 20px;
-  font-weight: 400;
-  margin-bottom: 8px;
-}
-
-/* Headlines */
-.headline-regular {
-  font-size: 17px;
-  font-weight: 400;
-}
-
-.headline-medium {
-  font-size: 17px;
-  font-weight: 500;
-}
 
 /* Captions */
 .caption-lg {
@@ -115,11 +92,24 @@ h4 {
 
 /* FOOTER */
 .footer {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.sitemap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+.sitemap li{
+    list-style: none;
+    margin-bottom: 10px;
 }
 
 
@@ -252,7 +242,7 @@ h4 {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
+    gap: 30px;
 }
 
 /* Tarjeta */
@@ -293,7 +283,7 @@ h4 {
 .learn-more {
     display: inline-block;
     margin: 0 20px 20px;
-    color: #1d4ed8;
+    color: #072AC8;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -308,4 +298,221 @@ h4 {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Sección */
+.clients-opinion {
+    position: relative;
+    background-image: url("assets/testimonial-section/orbit.png");
+    background-color: #292e47;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Título */
+.clients-opinion h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #f2f4fc;
+    text-transform: capitalize;
+}
+
+/* Testimonio */
+.clients-opinion p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: #ffc107;
+    line-height: 1.5;
+}
+
+/* Memojis (posicionamiento absoluto) */
+.emoji1{
+  position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 60px;
+}
+
+.emoji2{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 60px;
+}
+
+.emoji3 {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    width: 60px;
+}
+
+.emoji4 {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+}
+
+/* Perfil cliente */
+.client-profile {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.client-info h3 {
+    font-size: 16px;
+    margin: 5px 0 0;
+    color: #9ec5ff;
+}
+
+.client-info p {
+    font-size: 14px;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .clients-opinion h2 {
+        font-size: 28px;
+    }
+
+    .clients-opinion > p {
+        font-size: 16px;
+    }
+
+    .clients-opinion img:nth-of-type(1),
+    .clients-opinion img:nth-of-type(2),
+    .clients-opinion img:nth-of-type(3),
+    .clients-opinion img:nth-of-type(4) {
+        width: 40px;
+    }
+}
+
+/* Grid de Servicios */
+.services-section {
+    margin: 60px 80px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services-section h2{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #2d3142;
+    align-self: flex-start;
+}
+
+
+
+.projects-grid-services {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    width: 80%;
+    
+}
+
+/* Imagen */
+.project-card-services img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    padding : 20px;
+    background-color: #a2d6f9;
+    border-radius: 50%;
+}
+
+/* Contenido */
+.project-card-services h3 {
+    font-size: 20px;
+    margin: 20px 20px 10px;
+    color: #000;
+}
+
+.project-card-services p {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0 20px 20px;
+}
+.project-card-services {
+    background-color: #f2f4fc;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card-services:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Link */
+.learn-more {
+    display: inline-block;
+    margin: 0 20px 20px;
+    color: #072AC8;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+.contact-section{
+    display:flex;
+    flex-direction: column;
+    background-color: #ffc600;
+    padding: 60px 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contact-section input[type="email"] {
+    background-image: url(assets/newsletter/icon/mail.svg);
+    background-repeat: no-repeat;
+    background-position: 5%;
+    border: 1px solid var(--White);
+    text-align: center;
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+}
+
+.suscribe-btn {
+  background-color:  #072AC8;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 50px;
+  width: 150px;
 }
