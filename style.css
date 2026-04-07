@@ -1,4 +1,9 @@
 /* Base */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.4;
@@ -738,7 +743,7 @@ input, textarea {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .menu-toggle {
     display: block;
     font-size: 28px;
@@ -753,9 +758,16 @@ input, textarea {
     width: 100%;
     text-align: center;
   }
+  .contact-btn {
+    display: none; /* oculto por defecto */
+  }
 
+  .contact-btn.active {
+    display: block; /* se muestra cuando tiene la clase active */
+  }
   .nav-links.active {
-    display: flex; /* se muestra cuando tiene la clase active */
+    display: flex;
+    padding: 0; /* se muestra cuando tiene la clase active */
   }
 
   .hero-section {

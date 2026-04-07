@@ -6,13 +6,47 @@ function loadComponent(id, file) {
     .then(response => response.text())
     .then(data => {
       const el = document.getElementById(id);
-      if (el) el.innerHTML = data;
+      if (el) {
+        el.innerHTML = data;
+
+        // 👉 Inicializar JS del nav cuando se carga
+        if (id === "nav") initNav();
+      }
     });
 }
 
-// Cargar nav y footer (solo si existen)
+// Cargar nav y footer
 loadComponent("nav", "components/nav.html");
 loadComponent("footer", "components/footer.html");
+
+
+// ==========================
+// NAV (MENÚ HAMBURGUESA)
+// ==========================
+function initNav() {
+  console.log("NAV inicializado");
+  const toggleBtn = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  const contactBtn = document.getElementById("contact-btn");    
+
+  console.log(toggleBtn, navLinks);
+
+  if (!toggleBtn || !navLinks) return;
+
+  toggleBtn.addEventListener("click", () => {
+    console.log("CLICK DETECTADO");
+    navLinks.classList.toggle("active");
+    contactBtn.classList.toggle("active"); // Mostrar/ocultar botón Contact Us
+  });
+
+  // 👉 cerrar menú al hacer click en un link (mejora UX)
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      contactBtn.classList.remove("active");
+    });
+  });
+}
 
 
 // ==========================
@@ -99,10 +133,10 @@ function validatePhone(phone) {
   return /^[0-9]{9,}$/.test(phone);
 }
 
+
 // ==========================
 // PÁGINA DE PROYECTO (FETCH)
 // ==========================
-
 const params = new URLSearchParams(window.location.search);
 const projectId = params.get("id");
 
@@ -112,7 +146,6 @@ if (projectId) {
     .then(res => res.json())
     .then(data => {
 
-      // Buscar proyecto actual
       const project = data.find(p => p.uuid === projectId);
 
       if (!project) {
@@ -120,9 +153,7 @@ if (projectId) {
         return;
       }
 
-      // ==========================
       // PROYECTO ACTUAL
-      // ==========================
       const title = document.getElementById("title");
       const subtitle = document.getElementById("subtitle");
       const date = document.getElementById("date");
@@ -135,22 +166,17 @@ if (projectId) {
       if (image) image.src = project.image;
       if (content) content.textContent = project.content;
 
-      // ==========================
       // OTHER PROJECTS
-      // ==========================
       const otherProjectsContainer = document.getElementById("other-projects");
 
       if (otherProjectsContainer) {
 
-        // Filtrar proyectos que NO sean el actual
         const otherProjects = data
           .filter(p => p.uuid !== projectId)
-          .slice(0, 3); 
+          .slice(0, 3);
 
-        // Limpiar contenedor
         otherProjectsContainer.innerHTML = "";
 
-        // Crear tarjetas dinámicamente
         otherProjects.forEach(p => {
 
           const card = document.createElement("div");
@@ -175,11 +201,3 @@ if (projectId) {
     });
 
 }
-
-const toggleBtn = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
-
-toggleBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-  console.log("Click");
-});
