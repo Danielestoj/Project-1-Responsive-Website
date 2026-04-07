@@ -658,6 +658,13 @@ input, textarea {
     padding: 40px 0;
 }
 
+.top-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .project-container h1 {
     margin-bottom: 10px;
 }

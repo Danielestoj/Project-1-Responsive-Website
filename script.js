@@ -9,7 +9,7 @@ function loadComponent(id, file) {
       if (el) {
         el.innerHTML = data;
 
-        // 👉 Inicializar JS del nav cuando se carga
+        // Inicializar JS del nav cuando se carga
         if (id === "nav") initNav();
       }
     });
@@ -39,7 +39,7 @@ function initNav() {
     contactBtn.classList.toggle("active"); // Mostrar/ocultar botón Contact Us
   });
 
-  // 👉 cerrar menú al hacer click en un link (mejora UX)
+  // cerrar menú al hacer click en un link
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("active");
