@@ -1,22 +1,177 @@
-function loadComponent(id, file) { // Cargar un componente HTML en un elemento con el ID especificado
-  fetch(file) // Realizar una solicitud para obtener el archivo HTML
-    .then(response => response.text()) // Convertir la respuesta a texto
-    .then(data => { //  Una vez que se obtiene el contenido del archivo
-      document.getElementById(id).innerHTML = data; // Insertar el contenido HTML en el elemento con el ID especificado
+// ==========================
+// CARGA DE COMPONENTES
+// ==========================
+function loadComponent(id, file) {
+  fetch(file)
+    .then(response => response.text())
+    .then(data => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = data;
     });
 }
 
-// Cargar componentes
-loadComponent("nav", "components/nav.html"); // Cargar navegación en el elemento con ID "nav"
-loadComponent("footer", "components/footer.html"); // Cargar pie de página en el elemento con ID "footer"
+// Cargar nav y footer (solo si existen)
+loadComponent("nav", "components/nav.html");
+loadComponent("footer", "components/footer.html");
 
-// Flecha para volver al inicio
+
+// ==========================
+// BOTÓN BACK TO TOP
+// ==========================
 const backToTop = document.querySelector('.back-to-top');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > window.innerHeight - 800) {
-        backToTop.classList.add('show');
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight - 350) {
+      backToTop.classList.add('show');
     } else {
-        backToTop.classList.remove('show');
+      backToTop.classList.remove('show');
     }
-});
+  });
+}
+
+
+// ==========================
+// VALIDACIÓN DE FORMULARIO
+// ==========================
+const form = document.querySelector("form");
+
+if (form) {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let valid = true;
+    const inputs = form.querySelectorAll("input, textarea");
+
+    inputs.forEach(input => {
+      const errorMsg = input.nextElementSibling;
+
+      if (!errorMsg) return;
+
+      // Reset
+      input.classList.remove("error");
+      errorMsg.classList.remove("active");
+
+      // Validaciones
+      if (!input.value.trim()) {
+        showError(input, errorMsg, "Este campo es obligatorio");
+        valid = false;
+      } else if (input.type === "email" && !validateEmail(input.value)) {
+        showError(input, errorMsg, "Email no válido");
+        valid = false;
+      } else if (input.type === "tel" && !validatePhone(input.value)) {
+        showError(input, errorMsg, "Teléfono no válido");
+        valid = false;
+      }
+    });
+
+    if (valid) {
+      alert("Formulario enviado correctamente");
+      form.submit();
+    }
+  });
+
+  // Validación en tiempo real
+  const inputs = form.querySelectorAll("input, textarea");
+  inputs.forEach(input => {
+    input.addEventListener("input", () => {
+      const errorMsg = input.nextElementSibling;
+      if (!errorMsg) return;
+
+      input.classList.remove("error");
+      errorMsg.classList.remove("active");
+    });
+  });
+}
+
+// Funciones auxiliares
+function showError(input, errorMsg, message) {
+  input.classList.add("error");
+  errorMsg.textContent = message;
+  errorMsg.classList.add("active");
+}
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validatePhone(phone) {
+  return /^[0-9]{9,}$/.test(phone);
+}
+
+// ==========================
+// PÁGINA DE PROYECTO (FETCH)
+// ==========================
+
+const params = new URLSearchParams(window.location.search);
+const projectId = params.get("id");
+
+if (projectId) {
+
+  fetch("https://raw.githubusercontent.com/ironhack-jc/mid-term-api/main/projects")
+    .then(res => res.json())
+    .then(data => {
+
+      // Buscar proyecto actual
+      const project = data.find(p => p.uuid === projectId);
+
+      if (!project) {
+        document.body.innerHTML = "<h1>Proyecto no encontrado</h1>";
+        return;
+      }
+
+      // ==========================
+      // PROYECTO ACTUAL
+      // ==========================
+      const title = document.getElementById("title");
+      const subtitle = document.getElementById("subtitle");
+      const date = document.getElementById("date");
+      const image = document.getElementById("image");
+      const content = document.getElementById("content");
+
+      if (title) title.textContent = project.name;
+      if (subtitle) subtitle.textContent = project.description;
+      if (date) date.textContent = "Completed on " + project.completed_on;
+      if (image) image.src = project.image;
+      if (content) content.textContent = project.content;
+
+      // ==========================
+      // OTHER PROJECTS
+      // ==========================
+      const otherProjectsContainer = document.getElementById("other-projects");
+
+      if (otherProjectsContainer) {
+
+        // Filtrar proyectos que NO sean el actual
+        const otherProjects = data
+          .filter(p => p.uuid !== projectId)
+          .slice(0, 3); // opcional: limitar a 3
+
+        // Limpiar contenedor
+        otherProjectsContainer.innerHTML = "";
+
+        // Crear tarjetas dinámicamente
+        otherProjects.forEach(p => {
+
+          const card = document.createElement("div");
+          card.classList.add("project-card");
+
+          card.innerHTML = `
+            <img src="${p.image}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p>${p.description}</p>
+            <a class="learn-more" href="projects.html?id=${p.uuid}">
+              Learn more
+            </a>
+          `;
+
+          otherProjectsContainer.appendChild(card);
+        });
+      }
+
+    })
+    .catch(err => {
+      console.error("Error cargando proyecto:", err);
+    });
+
+}
