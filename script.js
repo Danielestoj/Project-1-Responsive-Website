@@ -145,7 +145,7 @@ if (projectId) {
         // Filtrar proyectos que NO sean el actual
         const otherProjects = data
           .filter(p => p.uuid !== projectId)
-          .slice(0, 3); // opcional: limitar a 3
+          .slice(0, 3); 
 
         // Limpiar contenedor
         otherProjectsContainer.innerHTML = "";
@@ -175,3 +175,11 @@ if (projectId) {
     });
 
 }
+
+const toggleBtn = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggleBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  console.log("Click");
+});
