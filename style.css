@@ -95,7 +95,6 @@ p {
 
 /* NAV */
 .nav {
-
   padding: 16px 0;
 }
 
@@ -129,7 +128,7 @@ p {
 
 .contact-btn {
   background-color:  var(--Primary);
-  color: var(--White);
+  color: var(--White) !important;
   font-size: 18px;
   font-weight: bold;
   border: none;
@@ -155,9 +154,19 @@ p {
     gap: 60px;
 }
 
+.sitemap li a {
+    text-decoration: none;
+    color: var(--NeutralMedium);
+}
+
 .sitemap li{
     list-style: none;
     margin-bottom: 10px;
+}
+
+.sitemap li a:hover {
+    color: var(--Primary);
+    text-decoration: underline;
 }
 
 
@@ -172,7 +181,7 @@ p {
 
 /* TEXTO */
 .hero-content {
-  width: 100%;
+  width: 80%;
 }
 
 .hero-content h1 {
@@ -483,7 +492,7 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
-    gap: 30px;
+    gap: 20px;
     align-items: stretch;
     margin: 0 auto;
     width: 95%;
@@ -558,9 +567,11 @@ p {
     background-position: 5%;
     border: 1px solid var(--White);
     text-align: center;
-    height: 50px;
+    height: 35px;
     width: 300px;
     font-size: 20px;
+    padding: 10px 20px;
+    margin : 0;
 }
 
 .suscribe-btn {
