@@ -1,0 +1,73 @@
+
+
+/*Formulario de contacto*/
+
+.contact-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    align-items: stretch;
+
+}
+
+.row {
+  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+}
+
+.field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #e5e7eb; /* gris claro */
+    border-radius: 4px;
+    font-size: 14px;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.submit-btn {
+    background-color:  var(--Primary);
+    color: var(--White);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+}
+
+/* Campo con error */
+.error {
+    border: 2px solid var(--Error) !important;
+    background-color: var(--ErrorLight);
+}
+
+/* Mensaje de error */
+.error-message {
+    color: var(--Error);
+    font-size: 12px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+/* Mostrar mensaje */
+.error-message.active {
+    display: block;
+}
