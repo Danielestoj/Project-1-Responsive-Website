@@ -100,7 +100,7 @@ if (form) {
     });
 
     if (valid) {
-      alert("Formulario enviado correctamente");
+      alert("Formulario enviado al éter correctamente, porque guardarse no se va a guardar.");
       form.submit();
     }
   });
