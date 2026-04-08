@@ -66,6 +66,10 @@
 }
 
 
+/* =========================
+   RESPONSIVE PROJECT
+========================= */
+
 /* -------- 500px -------- */
 @media (max-width: 500px) {
     .top-info {
@@ -103,12 +107,12 @@
     .project-container {
         width: 90%;
     }
-/* Sección general */
+    /* Sección general */
     .projects-section {
     padding: 10px;
     }
 
-/* Grid de proyectos */
+    /* Grid de proyectos */
     .projects-grid {
         display: grid;
         grid-template-columns: repeat(1, 1fr);

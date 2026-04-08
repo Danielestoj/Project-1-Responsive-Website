@@ -1,0 +1,24 @@
+/* ERROR 404 */
+
+.body {
+    width: 90%;
+}
+.error-container{
+    margin-top: 20px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+}
+
+.error-image {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.error-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center
+}

@@ -54,13 +54,12 @@ input, textarea {
 
 /* Campo con error */
 .error {
-    border: 2px solid var(--Error) !important;
-    background-color: var(--ErrorLight);
+    border: 2px solid var(--Wrong) !important;
 }
 
 /* Mensaje de error */
 .error-message {
-    color: var(--Error);
+    color: var(--Wrong);
     font-size: 12px;
     margin-top: -20px;
     margin-bottom: 10px;
@@ -70,4 +69,29 @@ input, textarea {
 /* Mostrar mensaje */
 .error-message.active {
     display: block;
+}
+
+/* =========================
+   RESPONSIVE CONTACT
+========================= */
+
+/* -------- 500px -------- */
+@media (max-width: 780px) {
+    .contact-container {
+        width: 90%;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+
+    .field{
+        width: 90%;
+    }
+
+    .input, textarea {
+        margin-bottom: 20px;
+        height: 100px;
+    }
 }

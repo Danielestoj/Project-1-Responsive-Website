@@ -184,7 +184,7 @@ if (projectId) {
 
           card.innerHTML = `
             <img src="${p.image}" alt="${p.name}">
-            <h3>${p.name}</h3>
+            <h4>${p.name}</h4>
             <p>${p.description}</p>
             <a class="learn-more" href="projects.html?id=${p.uuid}">
               Learn more
