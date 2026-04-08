@@ -10,7 +10,7 @@
 
 /* TEXTO */
 .hero-content {
-  width: 80%;
+  width: 90%;
 }
 
 .hero-content h1 {
@@ -19,8 +19,8 @@
   color: var(--NeutralDark);
 }
 
-.hero-content h2 {
-  color: var(--NeutralMedium);
+.hero-content h4 {
+  color: var(--NeutralDark);
   line-height: 1.6;
   margin-bottom: 30px;
 }
@@ -28,18 +28,21 @@
 /* BOTONES */
 .primary-btn {
   background-color:  var(--Primary);
-  color: var(--White);
   border: none;
   font-weight: bold;
   padding: 14px 22px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 4px;
   margin-right: 15px;
   transition: 0.3s;
 }
 
-.primary-btn:hover {
+.primary-btn a {
+  color: var(--White);
+  text-decoration: none;
+}
+
+.primary-btn a:hover {
   color:  var(--SecondaryLight);
 }
 
@@ -360,8 +363,24 @@
 /* -------- 500px -------- */
 @media (max-width: 500px) {
 
+    .body {
+        margin: 5px;
+        text-align: center;
+    }
+    .projects-section {
+        padding: 40px 20px;
+    }
+
   .hero-section {
-    padding: 40px 5%;
+    display: block;
+    align-items: center;
+    padding: 0;
+    margin-left: 30px;
+  }
+
+  .hero-content {
+    width: 100%;
+    text-align: left;
   }
 
   .hero-images img:first-child {
@@ -374,19 +393,30 @@
     display: none;
   }
 
+  .logos{
+    padding : 0 20px 20px 20px
+  }
+
   .logos img {
     height: 30px;
   }
 
+  .client-emojis {
+    display: none;
+  }
+
+  .services-section {
+    margin: 20px;
+    padding: 0;
+  }
+
   .contact-section input[type="email"] {
-    width: 100%;
+    width: 85%;
   }
 
   .suscribe-btn {
-    width: 100%;
+    margin-top: 20px;
+    width: 50%;
   }
 
-  .project-container {
-    width: 90%;
-  }
 }

@@ -128,13 +128,16 @@ p {
 
 .contact-btn {
   background-color:  var(--Primary);
-  color: var(--White) !important;
   font-size: 18px;
-  font-weight: bold;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.contact-btn a{
+  color: var(--White);
+  text-decoration: none;
 }
 
 /* FOOTER */
@@ -253,7 +256,7 @@ p {
 /* Añadido al principal puesto que se repite en main y en proyectos*/
 /* Tarjeta */
 .project-card {
-    margin: 0 20px 20px;
+
     background-color: var(--White);
     border-radius: 4px;
     overflow: hidden;
@@ -275,7 +278,7 @@ p {
 }
 
 /* Contenido */
-.project-card h4 {
+.project-card h3 {
     margin: 20px 20px 20px;
     color: var(--NeutralDark);
 }
@@ -368,5 +371,9 @@ p {
   .nav-links.active {
     display: flex;
     padding: 0; /* se muestra cuando tiene la clase active */
+  }
+
+  .sitemap { 
+    padding: 0;
   }
 }
