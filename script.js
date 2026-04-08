@@ -91,7 +91,7 @@ if (form) {
         showError(input, errorMsg, "Este campo es obligatorio");
         valid = false;
       } else if (input.value.toLowerCase() === "ironhack") {
-        showError(input, errorMsg, "Este nombre no está permitido");
+        showError(input, errorMsg, "Este nombre no está permitido, porque YO soy Ironhack");
         valid = false;
       } else if (input.type === "email" && !validateEmail(input.value)) {
         showError(input, errorMsg, "Email no válido");
