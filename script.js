@@ -90,6 +90,9 @@ if (form) {
       if (!input.value.trim()) {
         showError(input, errorMsg, "Este campo es obligatorio");
         valid = false;
+      } else if (input.value.toLowerCase() === "ironhack") {
+        showError(input, errorMsg, "Este nombre no está permitido");
+        valid = false;
       } else if (input.type === "email" && !validateEmail(input.value)) {
         showError(input, errorMsg, "Email no válido");
         valid = false;
