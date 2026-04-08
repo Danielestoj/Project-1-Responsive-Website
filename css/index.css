@@ -1,119 +1,117 @@
 /* HERO */
 .hero-section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 60px auto;
-  max-width: 85%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 60px auto;
+    max-width: 85%;
 }
 
 /* TEXTO */
 .hero-content {
-  width: 90%;
+     width: 90%;
 }
 
 .hero-content h1 {
-  line-height: 1.2;
-  margin-bottom: 20px;
-  color: var(--NeutralDark);
+     line-height: 1.2;
+     margin-bottom: 20px;
+     color: var(--NeutralDark);
 }
 
 .hero-content h4 {
-  color: var(--NeutralDark);
-  line-height: 1.6;
-  margin-bottom: 30px;
+    color: var(--NeutralDark);
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
 /* BOTONES */
 .primary-btn {
-  background-color:  var(--Primary);
-  border: none;
-  font-weight: bold;
-  padding: 14px 22px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-right: 15px;
-  transition: 0.3s;
+    background-color:  var(--Primary);
+    border: none;
+    font-weight: bold;
+    padding: 14px 22px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: 0.3s;
 }
 
 .primary-btn a {
-  color: var(--White);
-  text-decoration: none;
+    color: var(--White);
+    text-decoration: none;
 }
 
 .primary-btn a:hover {
-  color:  var(--SecondaryLight);
+      color:  var(--SecondaryLight);
 }
 
 .secondary-btn {
-  background: none;
-  border: none;
-  color: var(--NeutralMedium);
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+    background: none;
+    border: none;
+    color: var(--NeutralMedium);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .secondary-btn:hover {
-  color: var(--Primary);
-  text-decoration: underline;
-  
-  
+    color: var(--Primary);
+    text-decoration: underline;
 }
 
 /* IMÁGENES */
 .hero-images {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* imagen principal */
 .hero-images img:first-child {
-  width: 520px;
-  position: relative;
-  z-index: 2;
+    width: 520px;
+    position: relative;
+    z-index: 2;
 }
 
 /* tarjetas flotantes */
 .hero-images img:nth-child(2) {
-  position: absolute;
-  top: -20px;
-  left: -70px;
-  width: 300px;
-  z-index: 3;
+    position: absolute;
+    top: -20px;
+    left: -70px;
+    width: 300px;
+    z-index: 3;
 }
 
 .hero-images img:nth-child(3) {
-  position: absolute;
-  bottom: -80px;
-  right: -50px;
-  width: 250px;
-  z-index: 3;
+    position: absolute;
+    bottom: -80px;
+    right: -50px;
+    width: 250px;
+    z-index: 3;
 }
 
 /* LOGOS */
 .logos {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 40px 10%;
-  opacity: 0.6;
-  flex-wrap: wrap;
-  gap: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 10%;
+    opacity: 0.6;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .logos img {
-  height: 50px;
-  object-fit: contain;
-  filter: grayscale(100%);
+    height: 50px;
+    object-fit: contain;
+    filter: grayscale(100%);
 }
 
 .logos img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
+    filter: grayscale(0%);
+    opacity: 1;
 }
 
 
