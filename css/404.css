@@ -4,16 +4,19 @@
     width: 90%;
 }
 .error-container{
-    margin-top: 20px;;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   
 }
 
+
 .error-image {
-    width: 400px;
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
+    height: 0.5 vh;
 }
 
 .error-content {
@@ -22,3 +25,14 @@
     text-align: center;
     justify-content: center
 }
+
+.error-content p{
+    color: var(--NeutralDark);
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.error-content a{
+    font-size: 30px;
+}
+

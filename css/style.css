@@ -207,12 +207,17 @@ p {
     display:flex;
     flex-direction: column;
     background-color: var(--SecondaryLight);
-    padding: 60px 20px;
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    padding: 80px 20px;
     margin: 0 auto;
+}
+
+.contact-section p{
+    color: var(--NeutralDark);
+    font-size: 24px;
+    margin-bottom: 30px;
 }
 
 .contact-section input[type="email"] {
@@ -245,9 +250,7 @@ p {
 /* Añadido al principal puesto que se repite en main y en proyectos*/
 /* Tarjeta */
 .project-card {
-
     background-color: var(--White);
-    
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -300,74 +303,76 @@ p {
 /* -------- 1080px -------- */
 @media (max-width: 1080px) {
 
-  body { margin: 20px; }
+    body { margin: 20px; }
 
-  h1 { font-size: 48px; }
-  h2 { font-size: 40px; }
-  h3 { font-size: 32px; }
+    h1 { font-size: 48px; }
+    h2 { font-size: 40px; }
+    h3 { font-size: 32px; }
 }
 
 /* -------- 780px -------- */
 @media (max-width: 780px) {
-  .contact-btn{
-    margin-left:10px;
-    padding: 10px;
+    .contact-btn{
+      margin-left:10px;
+      padding: 10px;
+    }
+
+    .nav-links {
+      gap: 20px;
+    }
+
+    .nav-links a {
+      font-size: 16px;
+    }
+
+    .footer {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 
-  .nav-links {
-    gap: 20px;
-  }
+  /* -------- 500px -------- */
+  @media (max-width: 500px) {
 
-  .nav-links a {
-    font-size: 16px;
-  }
+    h1 { font-size: 32px; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 24px; }
 
-  .footer {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
+    .nav-container {
+      flex-direction: column;
+      gap: 10px;
+    }
 
-/* -------- 500px -------- */
-@media (max-width: 500px) {
+    .menu-toggle {
+      display: block;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
 
-  h1 { font-size: 32px; }
-  h2 { font-size: 28px; }
-  h3 { font-size: 24px; }
+    .nav-links {
+      display: none; /* oculto por defecto */
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+    }
+    .contact-btn {
+      display: none; /* oculto por defecto */
+    }
 
-  .nav-container {
-    flex-direction: column;
-    gap: 10px;
-  }
+    .contact-btn.active {
+      display: block; /* se muestra cuando tiene la clase active */
+    }
+    .nav-links.active {
+      display: flex;
+      padding: 0; /* se muestra cuando tiene la clase active */
+    }
 
-  .menu-toggle {
-    display: block;
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
+    .sitemap { 
+      padding: 0;
+    }
 
-  .nav-links {
-    display: none; /* oculto por defecto */
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-  }
-  .contact-btn {
-    display: none; /* oculto por defecto */
-  }
-
-  .contact-btn.active {
-    display: block; /* se muestra cuando tiene la clase active */
-  }
-  .nav-links.active {
-    display: flex;
-    padding: 0; /* se muestra cuando tiene la clase active */
-  }
-
-  .sitemap { 
-    padding: 0;
-  }
+    .
 
 }

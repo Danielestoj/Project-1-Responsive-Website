@@ -225,7 +225,7 @@
 
 /* Grid de Servicios */
 .services-section {
-    margin: 60px 80px;
+    margin: 30px 40px;
     display:flex;
     flex-direction: column;
     align-items: stretch;
@@ -243,10 +243,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
-    gap: 20px;
     align-items: stretch;
-    margin: 0 auto;
-    width: 95%;
+    width: 100%;
+    justify-items: center;
 }
 
 /* Imagen */
@@ -278,9 +277,9 @@
     border-radius: 4px;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin: 20px auto;
     padding: 30px 15px;
     width: 80%;
+    margin-top: 30px;
 }
 
 .project-card-services:hover {
@@ -352,6 +351,9 @@
     .projects-section {
         padding: 40px 20px;
         width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .projects-grid {
@@ -386,6 +388,7 @@
     .projects-section {
         padding: 40px 20px;
         width: 90%;
+
     }
 
     .hero-section {
