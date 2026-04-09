@@ -4,16 +4,6 @@
 
 Este proyecto consiste en el desarrollo y despliegue de un sitio web completamente responsive para una empresa ficticia llamada Circle. El trabajo se ha realizado siguiendo un flujo real, partiendo de un diseño en Figma e incorporando funcionalidades interactivas mediante JavaScript.
 
-## Objetivos de aprendizaje
-
-Al completar este proyecto, se han alcanzado los siguientes objetivos:
-
-* Construir un sitio web responsive utilizando únicamente HTML, CSS y JavaScript
-* Desplegar un sitio web en producción usando Netlify y Git
-* Implementar técnicas de seguimiento como las daily al inicio del día.
-* Trabajar a partir de archivos de diseño
-* Implementar funcionalidades dinámicas con JavaScript
-
 ---
 
 ## Funcionalidades
@@ -24,6 +14,8 @@ Al completar este proyecto, se han alcanzado los siguientes objetivos:
   * Home
   * Projects
   * Contact
+  * Página de eror 404
+
 * Carga dinámica de proyectos desde una API
 * Formulario de contacto con validación
 * Interfaz interactiva
@@ -46,6 +38,7 @@ Al completar este proyecto, se han alcanzado los siguientes objetivos:
 * Git y GitHub
 * Netlify (despliegue)
 * Visual Studio Code
+* ChatGPT
 
 ---
 
@@ -129,7 +122,7 @@ El proyecto sigue un enfoque Mobile First y se adapta a:
 
 * Dispositivos móviles (500px)
 * Tablets (780px-1080px)
-* Pantallas de escritorio 
+* Pantallas de escritorio (> 1200px)
 
 ---
 
@@ -183,3 +176,8 @@ El proyecto ha sido desplegado utilizando Netlify:
 
 ---
 
+## Backlog
+
+* Mejorar el apartado de "Recent Projects" en resolución de 500px. Se ha optado por el diseño actual pero podría ampliarse más hacia los lados.
+* Mejorar el hero section y dar más espacio entre el texto y las imágenes.
+* Configurar mejor la flecha "back-to-top" para que se haga automáticamente y no por píxeles para tener en cuenta diferentes tamaños de pantalla, especialmente en pantallas de escritorio.
