@@ -11,30 +11,29 @@ function loadComponent(id, file) {
 
         // Inicializar JS del nav cuando se carga
         if (id === "nav") initNav();
+        if (id === "search") initSearch();
+        if (id === "footer") initTheme();
       }
     });
 }
 
-// Cargar nav y footer
+// Cargar nav, footer y search
 loadComponent("nav", "components/nav.html");
 loadComponent("footer", "components/footer.html");
+loadComponent("search", "components/search.html");
 
 
 // ==========================
 // NAV (MENÚ HAMBURGUESA)
 // ==========================
 function initNav() {
-  console.log("NAV inicializado");
   const toggleBtn = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
   const contactBtn = document.getElementById("contact-btn");    
 
-  console.log(toggleBtn, navLinks);
-
   if (!toggleBtn || !navLinks) return;
 
   toggleBtn.addEventListener("click", () => {
-    console.log("CLICK DETECTADO");
     navLinks.classList.toggle("active");
     contactBtn.classList.toggle("active"); // Mostrar/ocultar botón Contact Us
   });
@@ -203,4 +202,164 @@ if (projectId) {
       console.error("Error cargando proyecto:", err);
     });
 
+}
+// ==========================
+// SEARCH COMPONENT
+// ==========================
+
+function initSearch() {
+
+  const openBtn = document.getElementById("openSearch");
+  const modal = document.getElementById("searchModal");
+  const closeBtn = document.getElementById("closeSearch");
+  const error = document.getElementById("searchError");
+
+  const nameInput = document.getElementById("searchName");
+  const idInput = document.getElementById("searchId");
+  const descInput = document.getElementById("searchDesc");
+  const dateInput = document.getElementById("searchDate");
+
+  const btnName = document.getElementById("btnName");
+  const btnId = document.getElementById("btnId");
+  const btnDesc = document.getElementById("btnDesc");
+  const btnDate = document.getElementById("btnDate");
+
+  if (!openBtn) return;
+
+  // Abrir modal
+  openBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+    error.textContent = "";
+  });
+
+  // Cerrar modal
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    error.textContent = "";
+  });
+
+  // FETCH reutilizable
+  function fetchProjects(callback) {
+    fetch("https://raw.githubusercontent.com/ironhack-jc/mid-term-api/main/projects")
+      .then(res => res.json())
+      .then(data => callback(data))
+      .catch(() => {
+        error.textContent = "Error al buscar";
+      });
+  }
+
+  // 🔍 BUSCAR POR NOMBRE
+  btnName.addEventListener("click", () => {
+    const value = nameInput.value.toLowerCase().trim();
+
+    if (!value) {
+      error.textContent = "Introduce un nombre";
+      return;
+    }
+
+    fetchProjects(data => {
+      const project = data.find(p =>
+        p.name.toLowerCase().includes(value)
+      );
+
+      if (project) {
+        window.location.href = "projects.html?id=" + project.uuid;
+      } else {
+        error.textContent = "No se encontró ningún proyecto con ese nombre";
+      }
+    });
+  });
+
+  // 🔍 BUSCAR POR ID
+  btnId.addEventListener("click", () => {
+    const value = idInput.value.toLowerCase().trim();
+
+    if (!value) {
+      error.textContent = "Introduce un ID";
+      return;
+    }
+
+    fetchProjects(data => {
+      const project = data.find(p =>
+        p.uuid.toLowerCase() === value
+      );
+
+      if (project) {
+        window.location.href = "projects.html?id=" + project.uuid;
+      } else {
+        error.textContent = "No existe un proyecto con ese ID";
+      }
+    });
+  });
+
+  // 🔍 BUSCAR POR DESCRIPCIÓN
+  btnDesc.addEventListener("click", () => {
+    const value = descInput.value.toLowerCase().trim();
+
+    if (!value) {
+      error.textContent = "Introduce una descripción";
+      return;
+    }
+
+    fetchProjects(data => {
+      const project = data.find(p =>
+        p.description.toLowerCase().includes(value)
+      );
+
+      if (project) {
+        window.location.href = "projects.html?id=" + project.uuid;
+      } else {
+        error.textContent = "No se encontró ningún proyecto con esa descripción";
+      }
+    });
+  });
+
+  // 🔍 BUSCAR POR FECHA
+  btnDate.addEventListener("click", () => {
+    const value = dateInput.value.toLowerCase().trim();
+
+    if (!value) {
+      error.textContent = "Introduce una fecha";
+      return;
+    }
+
+    fetchProjects(data => {
+      const project = data.find(p =>
+        p.completed_on.toLowerCase().includes(value)
+      );
+
+      if (project) {
+        window.location.href = "projects.html?id=" + project.uuid;
+      } else {
+        error.textContent = "No se encontró ningún proyecto con esa fecha";
+      }
+    });
+  });
+
+}
+
+
+// ==========================
+// TOGGLE DARK/DAY MODE
+// ==========================
+
+function initTheme() {
+  const btnSwitch = document.getElementById("switch");
+
+  if (!btnSwitch) return;
+
+  // Cargar preferencia
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  btnSwitch.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  });
 }

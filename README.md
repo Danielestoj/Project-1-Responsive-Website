@@ -10,7 +10,6 @@ Este proyecto consiste en el desarrollo y despliegue de un sitio web completamen
 
 * Diseño completamente responsive (móvil, tablet y escritorio)
 * Navegación entre múltiples páginas:
-
   * Home
   * Projects
   * Contact
@@ -21,12 +20,15 @@ Este proyecto consiste en el desarrollo y despliegue de un sitio web completamen
 * Interfaz interactiva
 * Código limpio y modular
 
+
 ### Funcionalidades extra (opcional)
 
 * Menú de navegación responsive
 * Animaciones en secciones de proyectos
 * Los proyectos no seleccionados se colocan de manera aleatoria en dicho apartado.
 * Página 404 personalizada
+* Modo claro y oscuro
+* Buscador de proyectos por nombre, id, descripción y fecha.
 
 ---
 
@@ -45,7 +47,7 @@ Este proyecto consiste en el desarrollo y despliegue de un sitio web completamen
 ## Demo en vivo
 
 * URL del sitio: [https://brilliant-creponne-b641bb.netlify.app/]
-* Repositorio: [https://github.com/tu-usuario/nombre-del-proyecto]
+* Repositorio: [https://github.com/Danielestoj/Project-1-Responsive-Website]
 
 ---
 
@@ -78,7 +80,8 @@ project-root/
 │   └── services-section/
 │   └── testimonial-section/
 │   └── mid-term-project  
-└── README.md
+├── README.md
+└── Proyecto 1 Responsive Website.pdf
 ```
 
 ## Uso de la API
@@ -141,7 +144,7 @@ Se ha trabajado a partir de un archivo de Figma, realizando tareas como:
 * KISS (Keep It Simple, Stupid)
 * DRY (Don't Repeat Yourself)
 * Código limpio y mantenible
-* Código separado en módulos reutilizables (nav y footer)
+* Código separado en módulos reutilizables (nav, footer y el buscador)
 * Código css separado por páginas.
 * Nombres claros en variables y funciones
 * Comentarios en el código para más aclaración.
@@ -162,7 +165,7 @@ El proyecto ha sido desplegado utilizando Netlify:
 
 * Repositorio en GitHub
 * Sitio web desplegado
-* Presentación del proyecto
+* Presentación del proyecto (dentro del repositorio)
 
 ---
 
@@ -181,3 +184,5 @@ El proyecto ha sido desplegado utilizando Netlify:
 * Mejorar el apartado de "Recent Projects" en resolución de 500px. Se ha optado por el diseño actual pero podría ampliarse más hacia los lados.
 * Mejorar el hero section y dar más espacio entre el texto y las imágenes.
 * Configurar mejor la flecha "back-to-top" para que se haga automáticamente y no por píxeles para tener en cuenta diferentes tamaños de pantalla, especialmente en pantallas de escritorio.
+* Mejorar el modo oscuro buscando otros colores para que sea más homogéneo.
+* Trabajar más en el buscador para que no haya confusión entre duplicados como por ejemplo buscar una palabra que aparezca en más de una descripción.

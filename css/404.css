@@ -11,7 +11,6 @@
   
 }
 
-
 .error-image {
     display: flex;
     justify-content: center;
@@ -27,12 +26,20 @@
 }
 
 .error-content p{
-    color: var(--NeutralDark);
+    color: var(--text-main);
     font-size: 24px;
     margin-bottom: 30px;
 }
 
 .error-content a{
     font-size: 30px;
+    color: var(--Primary);
 }
+
+.error-content a:hover{
+    font-size: 30px;
+    color: var(--SecondaryDark);
+}
+
+
 
