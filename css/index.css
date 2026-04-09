@@ -25,7 +25,7 @@
 }
 
 /* BOTONES */
-.primary-btn {
+.hero-primary-btn {
     background-color:  var(--Primary);
     border: none;
     font-weight: bold;
@@ -36,16 +36,16 @@
     transition: 0.3s;
 }
 
-.primary-btn a {
+.hero-primary-btn a {
     color: var(--White);
     text-decoration: none;
 }
 
-.primary-btn a:hover {
+.hero-primary-btn a:hover {
       color:  var(--SecondaryLight);
 }
 
-.secondary-btn {
+.hero-secondary-btn {
     background: none;
     border: none;
     color: var(--NeutralMedium);
@@ -55,8 +55,8 @@
     transition: 0.3s;
 }
 
-.secondary-btn:hover {
-    color: var(--Primary);
+.hero-secondary-btn a:hover {
+    color: var(--SecondaryDark);
     text-decoration: underline;
 }
 
