@@ -5,6 +5,10 @@
 Este proyecto consiste en el desarrollo y despliegue de un sitio web completamente responsive para una empresa ficticia llamada Circle. El trabajo se ha realizado siguiendo un flujo real, partiendo de un diseño en Figma e incorporando funcionalidades interactivas mediante JavaScript.
 
 ---
+## Equipo
+
+Creado por Daniel Estupiñán Ojeda para la Escuela de Programadores IV.
+
 
 ## Funcionalidades
 
