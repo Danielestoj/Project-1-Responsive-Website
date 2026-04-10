@@ -26,6 +26,7 @@
     width: 80%;
     margin: 30px 0;
     border-radius: 6px;
+    filter: drop-shadow(5px 5px 20px #c414ca74);
 }
 
 
